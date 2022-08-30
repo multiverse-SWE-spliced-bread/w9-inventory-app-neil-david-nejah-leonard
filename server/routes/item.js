@@ -15,7 +15,8 @@ router.get("/", async (req, res, next) => {
     }
 })
 
-// Get Single Item
+// Get Single Item  
+// #TODO Figure out why this isn't playing nice
 router.get("/:title", async (req, res, next) => {
     
     try {
