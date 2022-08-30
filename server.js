@@ -1,5 +1,6 @@
 const { db } = require("./server/models");
 const app = require("./server/app");
+//default port - maybe make dynamic?
 
 const PORT = process.env.PORT || 3000;
 
