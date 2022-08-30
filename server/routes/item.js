@@ -4,22 +4,28 @@ const {Item, Sauce} = require("../models")
 
 //Get all Items
 router.get("/", async (req, res, next) => {
+    
     try {
         const items = await Item.findAll();
+        console.log("Apple")
         res.send(items);
     } catch (error){
+        console.log("Orange")
         next(error);
     }
 })
 
 // Get Single Item
 router.get("/:title", async (req, res, next) => {
+    
     try {
-        const item = await Item.findByPk(req.params.title, {
+        console.log("Lemon")
+        const item = await Item.findOne(req.params.title, {
             include: [{model: Item}],
         });
         res.send(item);
     } catch (error){
+        console.log("Pineapple")
         next(error);
     }
 })

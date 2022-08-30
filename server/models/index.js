@@ -39,6 +39,5 @@ const Sauce = database.define("sauce", {
 
 module.exports = {
     db: database,
-    Item,
-    Sauce
+    Item
 };
