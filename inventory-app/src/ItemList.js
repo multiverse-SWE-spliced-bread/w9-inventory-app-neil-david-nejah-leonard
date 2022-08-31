@@ -1,44 +1,35 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 // import apiURL from './api';
 
 
-export const ItemList =() => {
+export const ItemList =({items,setItems, selectedItem,setSelectedItem, setView, setCurrentView}) => {
 
-    const [items , setItems  ] = useState ([])
 
-    async function fetchItems (){
-        const response = await fetch ('http://localhost:3000/item')
-        const itemData = await response.json()
-        console.log(itemData)
-        setItems(itemData)
+const handleClick = pageObject =>{
+    console.log('lemon')
+    setView(1)
+    setSelectedItem(pageObject)
     
-        
-    }
 
-    useEffect(()=>{
-        fetchItems()
-      }, [])
+}
+
 
     return <>
 {/* maps over items, displays in divs to look pretty */}
 {items.map((anObjectMapped, index) => {
     return (
-        <div className="itemCard" key={index}>
-            <img className='displayImage' src={anObjectMapped.image} />
+        <div className="itemCard" key={index} onClick={()=> handleClick(anObjectMapped)} >
+            
+            <img className='displayImage' src={anObjectMapped.image} alt={anObjectMapped.title} />
+            
               <ul>
                 <li>{anObjectMapped.title}</li>
                 <li>£{anObjectMapped.price}</li>
-                {/* <li>{anObjectMapped.description}</li> */}
-                {/* <li>{anObjectMapped.category}</li> */}
               </ul>
-                
         </div>
     );
 })}
-
     </>
-
-
 }
 
 
