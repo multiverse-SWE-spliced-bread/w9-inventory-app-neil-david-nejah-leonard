@@ -18,12 +18,10 @@ router.get("/", async (req, res, next) => {
 // Get Single Item  
 // #TODO Figure out why this isn't playing nice
 router.get("/:title", async (req, res, next) => {
-    
+    console.log(req.params.title)
     try {
         console.log("Lemon")
-        const item = await Item.findOne(req.params.title, {
-            include: [{model: Item}],
-        });
+        const item = await Item.findOne(({ where: { title: req.params.title} }))
         res.send(item);
     } catch (error){
         console.log("Pineapple")
