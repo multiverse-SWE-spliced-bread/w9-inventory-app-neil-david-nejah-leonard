@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-
+// import apiURL from './api';
 
 
 export const ItemList =() => {
@@ -21,7 +21,8 @@ export const ItemList =() => {
       }, [])
 
     return <p>
-  {JSON.stringify(items[0].title)}
+      {/* // need mapping over */}
+  {JSON.stringify(items)}
     </p>
 
 
