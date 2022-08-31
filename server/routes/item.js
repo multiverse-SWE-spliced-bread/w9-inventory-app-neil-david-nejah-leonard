@@ -1,32 +1,35 @@
+const { application } = require("express");
 const express = require("express")
 const router = express.Router();
 const {Item, Sauce} = require("../models")
 
-//Get all Items
+application.use(express.json())
+
+//Get all Items - routes from localhost:3000/item
 router.get("/", async (req, res, next) => {
     
     try {
         const items = await Item.findAll();
-        console.log("Apple")
+        console.log(items)
         res.send(items);
     } catch (error){
-        console.log("Orange")
         next(error);
     }
 })
 
 // Get Single Item  
-// #TODO Figure out why this isn't playing nice
+//Routes via localhost:3000/item/ItemName
 router.get("/:title", async (req, res, next) => {
     
     try {
-        console.log("Lemon")
-        const item = await Item.findOne(req.params.title, {
-            include: [{model: Item}],
+        const item = await Item.findOne({
+            where: {
+                title: req.params.title
+            }
         });
-        res.send(item);
+        console.log(item)
+        res.json(item)
     } catch (error){
-        console.log("Pineapple")
         next(error);
     }
 })
