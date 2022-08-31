@@ -1,30 +1,33 @@
+const { application } = require("express");
 const express = require("express")
 const router = express.Router();
 const {Item, Sauce} = require("../models")
 
-//Get all Items
+application.use(express.json())
+
+//Get all Items - routes from localhost:3000/item
 router.get("/", async (req, res, next) => {
     
     try {
         const items = await Item.findAll();
-        console.log("Apple")
+        console.log(items)
         res.send(items);
     } catch (error){
-        console.log("Orange")
         next(error);
     }
 })
 
 // Get Single Item  
 
+//Routes via localhost:3000/item/ItemName
 router.get("/:title", async (req, res, next) => {
     console.log(req.params.title)
     try {
         console.log("Lemon")
         const item = await Item.findOne(({ where: { title: req.params.title} }))
         res.send(item);
+
     } catch (error){
-        console.log("Pineapple")
         next(error);
     }
 })
