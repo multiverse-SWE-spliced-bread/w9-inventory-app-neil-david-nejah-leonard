@@ -26,7 +26,6 @@ router.get("/:title", async (req, res, next) => {
         console.log("Lemon")
         const item = await Item.findOne(({ where: { title: req.params.title} }))
         res.send(item);
-
     } catch (error){
         next(error);
     }

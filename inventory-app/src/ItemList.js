@@ -1,58 +1,41 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 // import apiURL from './api';
 
 
-export const ItemList =({item, setSingleItem}) => {
+export const ItemList =({items,setItems, selectedItem,setSelectedItem, setView, setCurrentView}) => {
 
-    const [items , setItems  ] = useState ([])
 
-    async function fetchItems (){
-        const response = await fetch ('http://localhost:3000/item')
-        const itemData = await response.json()
-        console.log(itemData)
-        setItems(itemData)
-  
-    }
+const handleClick = pageObject =>{
+    console.log('lemon')
+    setView(1)
+    setSelectedItem(pageObject)
+}
 
-    useEffect(()=>{
-        fetchItems()
-      }, [])
-
-function click(){
-
-    console.log('click')
-    
+const handleClickEdit = pageObject =>{  
+    setView(2)   
 }
 
 
-    return <>  
+    return <>
 {/* maps over items, displays in divs to look pretty */}
 {items.map((anObjectMapped, index) => {
     return (
-        <div>
-        <div className="itemCard" key={index}>
-            <img onClick={click}className='displayImage' src={anObjectMapped.image} alt=''/>
+    <div>
+        <div className="itemCard"> 
+            <img key={index} onClick={()=> handleClick(anObjectMapped)} className='displayImage' src={anObjectMapped.image} alt={anObjectMapped.title} />
               <ul>
                 <li>{anObjectMapped.title}</li>
                 <li>£{anObjectMapped.price}</li>
-                {/* <a>View Detail</a> */}
-                <li>{anObjectMapped.description}</li>
-                {/* <li>{anObjectMapped.category}</li> */}
-                <button>Edit</button>
-                <button>Delete</button>
               </ul>
-                
+              <div>
+              <button onClick={handleClickEdit} className="mainPage-btn">Edit</button>
+              <button className="mainPage-btn">Delete</button>
+              </div>     
         </div>
-
-
-        </div>
-    
+    </div> 
     );
 })}
-
     </>
-
-
 }
 
 

@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Form (){
+function Form ({items,setItems, selectedItem,setSelectedItem, setView, setCurrentView}){
 
 
     return <div>
     <form>
-    <h1>Edit Item</h1>
+    <h1 className='title'>Edit Item</h1>
         <div>
             <label>Input Id:
             <input name='inputId' type='text' placeholder='Enter Id'></input>
@@ -36,6 +36,7 @@ function Form (){
            <textarea name='Description' type="text"></textarea>
             </label>
         </div>
+        <button>Cancel</button>
         <button>Update</button>
     </form>
 </div>
