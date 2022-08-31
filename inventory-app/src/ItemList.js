@@ -24,12 +24,12 @@ export const ItemList =() => {
 {items.map((anObjectMapped, index) => {
     return (
         <div className="itemCard" key={index}>
-            <img className='displayImage' src={anObjectMapped.image}/>
+            <img className='displayImage' src={anObjectMapped.image} />
               <ul>
                 <li>{anObjectMapped.title}</li>
                 <li>£{anObjectMapped.price}</li>
-                <li>{anObjectMapped.description}</li>
-                <li>{anObjectMapped.category}</li>
+                {/* <li>{anObjectMapped.description}</li> */}
+                {/* <li>{anObjectMapped.category}</li> */}
               </ul>
                 
         </div>
