@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 // import apiURL from './api';
 
 
-export const ItemList =() => {
+export const ItemList =({item, setSingleItem}) => {
 
     const [items , setItems  ] = useState ([])
 
@@ -11,28 +11,42 @@ export const ItemList =() => {
         const itemData = await response.json()
         console.log(itemData)
         setItems(itemData)
-    
-        
+  
     }
 
     useEffect(()=>{
         fetchItems()
       }, [])
 
-    return <>
+function click(){
+
+    console.log('click')
+    
+}
+
+
+    return <>  
 {/* maps over items, displays in divs to look pretty */}
 {items.map((anObjectMapped, index) => {
     return (
+        <div>
         <div className="itemCard" key={index}>
-            <img className='displayImage' src={anObjectMapped.image}/>
+            <img onClick={click}className='displayImage' src={anObjectMapped.image} alt=''/>
               <ul>
                 <li>{anObjectMapped.title}</li>
                 <li>£{anObjectMapped.price}</li>
+                {/* <a>View Detail</a> */}
                 <li>{anObjectMapped.description}</li>
-                <li>{anObjectMapped.category}</li>
+                {/* <li>{anObjectMapped.category}</li> */}
+                <button>Edit</button>
+                <button>Delete</button>
               </ul>
                 
         </div>
+
+
+        </div>
+    
     );
 })}
 

@@ -1,14 +1,23 @@
+import { useState } from 'react';
 import './App.css';
-import { ItemList } from './ItemList';
+import {ItemList } from './ItemList';
+import  NavBar  from './NavBar';
 
 
 function App() {
 
 
+  const [selectedItem, setSelectedItem] = useState({})
+  const [items, setItems]= useState ({})
+
+
+
   return (
     <div className="App">
-    {/* <h1>hello</h1> */}
+    <NavBar />
+    <div className='Items'>
     <ItemList />
+    </div>
     </div>
   );
 }
