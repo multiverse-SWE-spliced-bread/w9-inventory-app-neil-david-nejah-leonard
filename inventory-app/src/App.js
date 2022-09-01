@@ -4,13 +4,28 @@ import './App.css';
 import {ItemList } from './ItemList';
 import  NavBar  from './NavBar';
 import Form from './Form'
+
+import AddItemForm from './AddItemForm';
+
+
 import SingleItem from './SingleItem';
+
 
 
 function App() {
 	const [selectedItem, setSelectedItem] = useState({})
 	const [items , setItems  ] = useState ([])
 	const [view, setView] = useState(0)
+
+
+	function updateForm() {
+	setView(2)
+}
+
+
+	function addItemFormBtn(){
+	setView(3)
+}
 
 
 	const views = [
@@ -22,7 +37,8 @@ function App() {
 	 ,
 	//  Form page
 	  <div><Form /></div> ,
-	  <p>order-view-3</p>,
+
+	  <div><AddItemForm /></div>,
 	  <p>support-view-4</p>
 ]	
 
@@ -44,12 +60,15 @@ async function fetchItems (){
     <div className="App">
 		{/* views is array of views, view is the piece of state for view */}	 
 		<NavBar />
+		<button onClick={addItemFormBtn}>Add New Item</button>
 		<div className='Items'>
 		{views[view]}  
 		</div>
 
-    </div>
+
+    </div>)
  
-)}
+}
+
 
 export default App;

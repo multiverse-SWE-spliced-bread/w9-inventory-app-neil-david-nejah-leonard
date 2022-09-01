@@ -1,6 +1,9 @@
 import React from "react";
 
-function NavBar ({items,setItems, selectedItem,setSelectedItem, setView, setCurrentView}){
+
+function NavBar ({items, setItems, selectedItem, setSelectedItem, setView, setCurrentView}){
+
+
 
 
     return(<div>
@@ -17,6 +20,7 @@ function NavBar ({items,setItems, selectedItem,setSelectedItem, setView, setCurr
                         <a href="/Support">Support</a>
                         </li>
                     <div className='navBar-btn'>
+                    
                     <button>Login</button>
                     <button>Register</button>
                     </div>
