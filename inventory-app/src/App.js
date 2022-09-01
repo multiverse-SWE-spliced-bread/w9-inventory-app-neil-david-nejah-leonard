@@ -26,7 +26,7 @@ function App() {
 			<h1 className='title'>{selectedItem.title}</h1>
 			<img src={selectedItem.image} alt=''/>
 			<p>{selectedItem.description}</p>
-			<h2 className='title'>{selectedItem.price}</h2>
+			<h2 className='title'>£{selectedItem.price}</h2>
 		<button className="singleView-btn">Delete Item</button>
 		<button className="singleView-btn"onClick={updateForm}>Update Item</button>
 	</div>

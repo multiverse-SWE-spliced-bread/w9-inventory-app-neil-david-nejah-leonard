@@ -25,7 +25,7 @@ const handleClickEdit = pageObject =>{
             <img key={index} onClick={()=> handleClick(anObjectMapped)} className='displayImage' src={anObjectMapped.image} alt={anObjectMapped.title} />
               <ul>
                 <li>{anObjectMapped.title}</li>
-                <li>£{anObjectMapped.price}</li>
+                <li>£{anObjectMapped.price.toFixed(2)}</li>
               </ul>
               <div>
               <button onClick={handleClickEdit} className="mainPage-btn">Edit</button>
