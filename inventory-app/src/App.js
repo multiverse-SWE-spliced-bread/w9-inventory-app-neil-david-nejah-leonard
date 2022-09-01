@@ -19,7 +19,6 @@ function App() {
 	
  <ItemList items={items} selectedItem={selectedItem} setSelectedItem={setSelectedItem} setView={setView} />
 
-	 
 	,
 	//Single page 
 	//   <p>{JSON.stringify(selectedItem)}</p>,
@@ -61,7 +60,7 @@ async function fetchItems (){
 		</div>
 
     </div>
- </>
-}
+ 
+)}
 
 export default App;
