@@ -33,9 +33,10 @@ router.get("/:title", async (req, res, next) => {
 
 
 //create New item
-router.post("/", async (req,res, next) => {
+router.post("/create", async (req,res, next) => {
     try{
         await Item.create(req.body)
+        console.log(req.body + 'test log')
         res.json("Item created!")
     }catch (error) {
         next(error)

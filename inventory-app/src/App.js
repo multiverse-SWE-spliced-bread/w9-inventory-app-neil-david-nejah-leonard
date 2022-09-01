@@ -17,7 +17,6 @@ function App() {
 	const [items , setItems  ] = useState ([])
 	const [view, setView] = useState(0)
 
-
 	function updateForm() {
 	setView(2)
 }
@@ -59,7 +58,7 @@ async function fetchItems (){
   return (
     <div className="App">
 		{/* views is array of views, view is the piece of state for view */}	 
-		<NavBar />
+		<NavBar setView={setView}/>
 		<button onClick={addItemFormBtn}>Add New Item</button>
 		<div className='Items'>
 		{views[view]}  
