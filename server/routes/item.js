@@ -31,6 +31,18 @@ router.get("/:title", async (req, res, next) => {
     }
 })
 
+//create New item
+router.post("/", async (req,res, next) => {
+    try{
+        await Item.create(req.body)
+        res.json('Item created!')
+    }catch (error) {
+        next(error)
+    }
+    });
+
+
+
 
 module.exports = router
 
