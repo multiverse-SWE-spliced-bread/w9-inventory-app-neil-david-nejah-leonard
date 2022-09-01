@@ -69,8 +69,8 @@ async function fetchItems (){
 		{views[view]}  
 		</div>
 
-    </div>
- </>
+    </div>)
+ 
 }
 
 export default App;

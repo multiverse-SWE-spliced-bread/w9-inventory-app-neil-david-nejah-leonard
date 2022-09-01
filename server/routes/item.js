@@ -31,8 +31,15 @@ router.get("/:title", async (req, res, next) => {
     }
 })
 
-router.post('/', async  (req, res) => {
+router.post('/', async  (req, res, next) => {
     console.log(req.body)
+    try{
+        await Item.create(req.body)
+        items.push(req.body)
+        res.json('Item added')
+    }catch (error){
+        next(error)
+    }
 })
 
 

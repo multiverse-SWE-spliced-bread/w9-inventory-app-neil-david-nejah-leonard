@@ -18,8 +18,8 @@ try{
         body:JSON.stringify(formInputs)
     })
     const data = await res.json()
-    console.log(data)
-    console.log(formInputs)
+    // console.log(data)
+    // console.log(formInputs)
 
     let newObj = {}
 
@@ -38,7 +38,7 @@ try{
     let formData = formInputs
     formData[e.target.title]= e.target.value
     setFormInputs(formData)
-    console.log(formInputs)
+    console.log(formData)
 
 }
 
@@ -46,11 +46,11 @@ try{
     return <div>
     <form id='addItem'onSubmit={submitHandler}>
     <h1 className='title'>Add Item</h1>
-        <div>
+        {/* <div>
             <label>Input Id:
             <input name='inputId' type='text' placeholder='Enter Id' value={formInputs.inputId} onChange={onChangeHandler}></input>
             </label>
-        </div>
+        </div> */}
     
         <div>
             <label>Item name:
@@ -64,7 +64,7 @@ try{
         </div>
         <div>
             <label>Description:
-           <textarea name='Description' type="text" value={formInputs.description} onChange={onChangeHandler}></textarea>
+           <textarea name='Description' placeholder='Description'type="text" value={formInputs.description} onChange={onChangeHandler}></textarea>
             </label>
         </div>
     

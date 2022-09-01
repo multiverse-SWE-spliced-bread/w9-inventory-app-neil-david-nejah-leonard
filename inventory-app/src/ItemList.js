@@ -6,7 +6,7 @@ export const ItemList =({items,setItems, selectedItem,setSelectedItem, setView, 
 
 
 const handleClick = pageObject =>{
-    console.log('lemon')
+  
     setView(1)
     setSelectedItem(pageObject)
 
