@@ -9,6 +9,7 @@ const handleClick = pageObject =>{
     console.log('lemon')
     setView(1)
     setSelectedItem(pageObject)
+
 }
 
 const handleClickEdit = pageObject =>{  
@@ -16,10 +17,12 @@ const handleClickEdit = pageObject =>{
 }
 
 
+
     return <>
 {/* maps over items, displays in divs to look pretty */}
 {items.map((anObjectMapped, index) => {
     return (
+
     <div>
         <div className="itemCard"> 
             <img key={index} onClick={()=> handleClick(anObjectMapped)} className='displayImage' src={anObjectMapped.image} alt={anObjectMapped.title} />
@@ -31,6 +34,7 @@ const handleClickEdit = pageObject =>{
               <button onClick={handleClickEdit} className="mainPage-btn">Edit</button>
               <button className="mainPage-btn">Delete</button>
               </div>     
+
         </div>
     </div> 
     );
