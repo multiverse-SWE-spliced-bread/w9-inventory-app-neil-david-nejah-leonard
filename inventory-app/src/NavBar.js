@@ -11,18 +11,18 @@ function NavBar ({items, setItems, selectedItem, setSelectedItem, setView, setCu
                     <a href="/" className="site-title" >Inventory App</a>
                 <ul>
                         <li className='active'>
-                        <a href="/">Home</a>               
+                        <p onClick={()=>{setView(0)}}>Home</p>               
                         </li>
                         <li>
-                        <a href="/Orders">Orders</a>
+                        <p>Orders</p>
                         </li>
                         <li>
                         <p onClick={()=>{setView(3)}}>Add Item</p>
                         </li>
                     <div className='navBar-btn'>
                     
-                    <button>Login</button>
-                    <button>Register</button>
+                    {/* <button>Login</button>
+                    <button>Register</button> */}
                     </div>
                 </ul>
             </nav> 
