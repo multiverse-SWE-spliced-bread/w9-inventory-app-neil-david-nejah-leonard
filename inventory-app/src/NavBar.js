@@ -4,8 +4,6 @@ import React from "react";
 function NavBar ({items, setItems, selectedItem, setSelectedItem, setView, setCurrentView}){
 
 
-
-
     return(<div>
             <nav className="nav" >
                     <a href="/" class="site-title" >Inventory App</a>

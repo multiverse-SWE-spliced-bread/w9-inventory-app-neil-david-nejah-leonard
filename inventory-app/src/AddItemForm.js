@@ -6,7 +6,7 @@ const [formInputs, setFormInputs] = useState({})
 
 
 async function submitHandler(e){
-e.preventDefault()
+    e.preventDefault()
 try{
 
     const res = await fetch ('https://www.localhost:3000/item', {
@@ -20,10 +20,10 @@ try{
     const data = await res.json()
     // console.log(data)
     // console.log(formInputs)
+    // let newObj = {data}
 
-    let newObj = {}
+    setFormInputs(data)
 
-    setFormInputs(newObj)
     console.log(formInputs)
     console.log('New Item added')
 
@@ -32,16 +32,14 @@ try{
 }
 
 }
-
     function onChangeHandler(e){
 
     let formData = formInputs
-    formData[e.target.title]= e.target.value
+    formData[e.target.name]= e.target.value
     setFormInputs(formData)
     console.log(formData)
 
 }
-
 
     return <div>
     <form id='addItem'onSubmit={submitHandler}>
@@ -51,7 +49,6 @@ try{
             <input name='inputId' type='text' placeholder='Enter Id' value={formInputs.inputId} onChange={onChangeHandler}></input>
             </label>
         </div> */}
-    
         <div>
             <label>Item name:
             <input name='title' type='text' placeholder="Enter the item's name" value={formInputs.title} onChange={onChangeHandler}></input>
@@ -64,10 +61,9 @@ try{
         </div>
         <div>
             <label>Description:
-           <textarea name='Description' placeholder='Description'type="text" value={formInputs.description} onChange={onChangeHandler}></textarea>
+           <textarea name='description' placeholder='Description'type="text" value={formInputs.description} onChange={onChangeHandler}></textarea>
             </label>
         </div>
-    
         <div>
             <label>Category:
             <input name='category' type='text' placeholder='Enter clothing category ' value={formInputs.category} onChange={onChangeHandler}></input>
