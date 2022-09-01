@@ -4,7 +4,11 @@ import './App.css';
 import {ItemList } from './ItemList';
 import  NavBar  from './NavBar';
 import Form from './Form'
+
 import AddItemForm from './AddItemForm';
+
+
+import SingleItem from './SingleItem';
 
 
 
@@ -12,6 +16,7 @@ function App() {
 	const [selectedItem, setSelectedItem] = useState({})
 	const [items , setItems  ] = useState ([])
 	const [view, setView] = useState(0)
+
 
 	function updateForm() {
 	setView(2)
@@ -22,22 +27,13 @@ function App() {
 	setView(3)
 }
 
+
 	const views = [
 	
  <ItemList items={items} selectedItem={selectedItem} setSelectedItem={setSelectedItem} setView={setView} />
 
-	 
 	,
-	//Single page 
-	//   <p>{JSON.stringify(selectedItem)}</p>,
-	<div className='singleItem-card'>
-			<h1 className='title'>{selectedItem.title}</h1>
-			<img src={selectedItem.image} alt=''/>
-			<p>{selectedItem.description}</p>
-			<h2 className='title'>£{selectedItem.price}</h2>
-		<button className="singleView-btn">Delete Item</button>
-		<button className="singleView-btn"onClick={updateForm}>Update Item</button>
-	</div>
+	<SingleItem items={items} selectedItem={selectedItem} setSelectedItem={setSelectedItem} setView={setView} fetchItems={fetchItems}/>
 	 ,
 	//  Form page
 	  <div><Form /></div> ,
@@ -69,8 +65,10 @@ async function fetchItems (){
 		{views[view]}  
 		</div>
 
+
     </div>)
  
 }
+
 
 export default App;
