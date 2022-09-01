@@ -35,9 +35,9 @@ function App() {
 	<SingleItem items={items} selectedItem={selectedItem} setSelectedItem={setSelectedItem} setView={setView} fetchItems={fetchItems}/>
 	 ,
 	//  Form page
-	  <div><Form /></div> ,
+	  <div><Form setView={setView} fetchItems={fetchItems} /></div> ,
 
-	  <div><AddItemForm /></div>,
+	  <div><AddItemForm setView={setView} fetchItems={fetchItems}/></div>,
 	  <p>support-view-4</p>
 ]	
 

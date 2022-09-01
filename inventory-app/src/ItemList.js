@@ -38,9 +38,9 @@ const handleDelete = async()=>{
                 <li>{anObjectMapped.title}</li>
                 <li>£{anObjectMapped.price.toFixed(2)}</li>
               </ul>
-              <div>
+              <div className="buttonsDiv">
               <button onClick={handleClickEdit} className="mainPage-btn">Edit</button>
-              <button className="mainPage-btn" onClick={handleDelete}>Delete</button>
+              {/* <button className="mainPage-btn" onClick={handleDelete}>Delete</button> */}
               </div>     
 
         </div>
