@@ -45,6 +45,7 @@ router.post("/create", async (req,res, next) => {
 
 //update item - IS THIS RIGHT TO LINK IN WITH LEONARDS FORM? ("/:title")
 router.put("/:title", async (req,res, next) => {
+    console.log(req.params.title)
     try{
         await Item.update(req.body,{
            where: {
