@@ -43,7 +43,11 @@ router.post("/", async (req,res, next) => {
 
 router.delete("/:title", async (req, res, next) => {
     try{
-        await Item.destroy(req.params.title)
+        await Item.destroy({
+        where: {
+            title: req.params.title
+        }
+    })
         res.json('Item deleted')
     }catch (error) {
         next(error)
