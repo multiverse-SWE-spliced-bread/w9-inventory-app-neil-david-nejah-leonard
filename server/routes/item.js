@@ -31,6 +31,26 @@ router.get("/:title", async (req, res, next) => {
     }
 })
 
+router.post("/", async (req,res, next) => {
+    try{
+        await Item.create(req.body)
+        res.json('Item created!')
+    }catch (error) {
+        next(error)
+    }
+
+});
+
+router.delete("/:title", async (req, res, next) => {
+    try{
+        await Item.destroy(req.params.title)
+        res.json('Item deleted')
+    }catch (error) {
+        next(error)
+    }
+})
+
+
 
 module.exports = router
 
