@@ -12,23 +12,13 @@ function Form ({items,setItems, selectedItem,setSelectedItem, setView, setCurren
             </label>
         </div>
         <div>
-            <label>Category:
-            <input name='Category' type='text' placeholder='Enter clothing category '></input>
-            </label>
-        </div>
-        <div>
             <label>Item name:
             <input name='title' type='text' placeholder="Enter the item's name"></input>
             </label>
         </div>
         <div>
             <label>Price:
-            <input name='title' type='text' placeholder="Enter the item's price"></input>
-            </label>
-        </div>
-        <div>
-            <label>Image Url:
-            <input name='title' type='text' placeholder="Enter the images url"></input>
+            <input name='price' type='text' placeholder="Enter the item's price"></input>
             </label>
         </div>
         <div>
@@ -36,6 +26,17 @@ function Form ({items,setItems, selectedItem,setSelectedItem, setView, setCurren
            <textarea name='Description' type="text"></textarea>
             </label>
         </div>
+        <div>
+            <label>Category:
+            <input name='Category' type='text' placeholder='Enter clothing category '></input>
+            </label>
+        </div>
+        <div>
+            <label>Image Url:
+            <input name='image' type='text' placeholder="Enter the images url"></input>
+            </label>
+        </div>
+      
         <button>Cancel</button>
         <button>Update</button>
     </form>

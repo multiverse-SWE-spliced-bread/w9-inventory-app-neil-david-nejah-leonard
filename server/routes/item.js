@@ -31,6 +31,10 @@ router.get("/:title", async (req, res, next) => {
     }
 })
 
+router.post('/', async  (req, res) => {
+    console.log(req.body)
+})
+
 
 module.exports = router
 

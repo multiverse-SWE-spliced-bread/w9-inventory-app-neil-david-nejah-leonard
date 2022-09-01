@@ -3,6 +3,7 @@ import './App.css';
 import {ItemList } from './ItemList';
 import  NavBar  from './NavBar';
 import Form from './Form'
+import AddItemForm from './AddItemForm';
 
 
 
@@ -14,6 +15,12 @@ function App() {
 	function updateForm() {
 	setView(2)
 }
+
+
+	function addItemFormBtn(){
+	setView(3)
+}
+
 	const views = [
 	
  <ItemList items={items} selectedItem={selectedItem} setSelectedItem={setSelectedItem} setView={setView} />
@@ -33,7 +40,8 @@ function App() {
 	 ,
 	//  Form page
 	  <div><Form /></div> ,
-	  <p>order-view-3</p>,
+
+	  <div><AddItemForm /></div>,
 	  <p>support-view-4</p>
 ]	
 
@@ -55,6 +63,7 @@ async function fetchItems (){
     <div className="App">
 		{/* views is array of views, view is the piece of state for view */}	 
 		<NavBar />
+		<button onClick={addItemFormBtn}>Add New Item</button>
 		<div className='Items'>
 		{views[view]}  
 		</div>
