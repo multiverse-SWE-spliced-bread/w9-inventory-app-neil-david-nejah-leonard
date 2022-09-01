@@ -1,5 +1,4 @@
 // This is a snippet for populating the database with seed data.
-
 const {sauces, items} = require('./seedData.js');
 
 const {database} = require('../server/db');
