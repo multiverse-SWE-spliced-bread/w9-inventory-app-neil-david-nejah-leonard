@@ -5,7 +5,7 @@ function NavBar ({items,setItems, selectedItem,setSelectedItem, setView, setCurr
 
     return(<div>
             <nav className="nav" >
-                    <a href="/" class="site-title" >Inventory App</a>
+                    <a href="/" className="site-title" >Inventory App</a>
                 <ul>
                         <li className='active'>
                         <a href="/">Home</a>               

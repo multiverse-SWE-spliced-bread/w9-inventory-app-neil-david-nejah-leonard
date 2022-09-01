@@ -7,13 +7,15 @@ function SingleItem ({items,setItems, selectedItem,setSelectedItem, setView, set
         setView(2)
     }
 
-    // //This may work depending how delete route is written
-    // const handleDelete = async()=>{
-    //     const response = await fetch(`https://localhost:3000/Item/${selectedItem.title}`,
-    //     {method: 'DELETE'})
-    //     const itemData = await response.json()
-            // setView(0)
-    // }
+    //sends request to routes to delete item
+    const handleDelete = async()=>{
+        console.log(selectedItem.title)
+        const response = await fetch(`http://localhost:3000/item/${selectedItem.title}`,
+        {method: 'DELETE'})
+        const itemData = await response.json()
+            setView(0)
+           
+    }
 
 
     // TODO fetch for updateForm, and API URL
@@ -27,7 +29,7 @@ function SingleItem ({items,setItems, selectedItem,setSelectedItem, setView, set
 			<img src={selectedItem.image} alt=''/>
 			<p>{selectedItem.description}</p>
 			<h2 className='title'>£{selectedItem.price}</h2>
-		<button className="singleView-btn" onClick={updateForm}>Delete Item</button>
+		<button className="singleView-btn" onClick={handleDelete}>Delete Item</button>
 		<button className="singleView-btn"onClick={updateForm}>Update Item</button>
 	
           
