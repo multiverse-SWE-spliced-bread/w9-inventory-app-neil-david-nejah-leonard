@@ -35,7 +35,21 @@ router.get("/:title", async (req, res, next) => {
 router.post("/", async (req,res, next) => {
     try{
         await Item.create(req.body)
-        res.json('Item created!')
+        res.json("Item created!")
+    }catch (error) {
+        next(error)
+    }
+    });
+
+//update item - IS THIS RIGHT TO LINK IN WITH LEONARDS FORM? ("/:title")
+router.put("/:title", async (req,res, next) => {
+    try{
+        await Item.update(req.body,{
+           where: {
+            title: req.params.title
+           }
+    });
+        res.json("Item updated!")
     }catch (error) {
         next(error)
     }
