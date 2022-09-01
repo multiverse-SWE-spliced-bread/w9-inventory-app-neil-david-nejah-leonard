@@ -14,6 +14,9 @@ function SingleItem ({items,setItems, selectedItem,setSelectedItem, setView, set
     //     const itemData = await response.json()
             // setView(0)
     // }
+
+
+    // TODO fetch for updateForm, and API URL
     return(
 
 
@@ -24,7 +27,7 @@ function SingleItem ({items,setItems, selectedItem,setSelectedItem, setView, set
 			<img src={selectedItem.image} alt=''/>
 			<p>{selectedItem.description}</p>
 			<h2 className='title'>£{selectedItem.price}</h2>
-		<button className="singleView-btn" onClick={handleDelete}>Delete Item</button>
+		<button className="singleView-btn" onClick={}>Delete Item</button>
 		<button className="singleView-btn"onClick={updateForm}>Update Item</button>
 	
           
