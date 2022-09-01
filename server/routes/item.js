@@ -37,7 +37,7 @@ router.post("/create", async (req,res, next) => {
     try{
         await Item.create(req.body)
         console.log(req.body + 'test log')
-        res.json("Item created!")
+        res.send("Item created!")
     }catch (error) {
         next(error)
     }
