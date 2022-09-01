@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+
 import {ItemList } from './ItemList';
 import  NavBar  from './NavBar';
 import Form from './Form'
@@ -58,8 +59,9 @@ async function fetchItems (){
 		<div className='Items'>
 		{views[view]}  
 		</div>
+
     </div>
-  );
+ </>
 }
 
 export default App;
