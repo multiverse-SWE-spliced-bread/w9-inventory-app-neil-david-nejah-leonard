@@ -17,7 +17,7 @@ function NavBar ({items, setItems, selectedItem, setSelectedItem, setView, setCu
                         <a href="/Orders">Orders</a>
                         </li>
                         <li>
-                        <a href="/Support">Support</a>
+                        <p onClick={()=>{setView(3)}}>Add Item</p>
                         </li>
                     <div className='navBar-btn'>
                     

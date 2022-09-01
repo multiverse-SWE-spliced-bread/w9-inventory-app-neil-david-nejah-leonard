@@ -59,7 +59,7 @@ async function fetchItems (){
     <div className="App">
 		{/* views is array of views, view is the piece of state for view */}	 
 		<NavBar setView={setView}/>
-		<button onClick={addItemFormBtn}>Add New Item</button>
+		{/* <button onClick={addItemFormBtn}>Add New Item</button> */}
 		<div className='Items'>
 		{views[view]}  
 		</div>

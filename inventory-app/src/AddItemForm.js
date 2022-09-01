@@ -14,16 +14,6 @@ function AddItemForm({
     e.preventDefault();
     console.log(formInputs);
     try {
-      //   const response = await fetch(`http://localhost:3000/item/create`,{
-      //   method: "POST",
-      //   mode: 'cors',
-      //   header: {
-      //     "Content-Type": "application/json",
-      //     Accept: "application/json",
-      //   },
-
-      //   body: JSON.stringify(formInputs),
-      // });
 
       let response = await fetch('http://localhost:3000/item/create', {
         headers: {

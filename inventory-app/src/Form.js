@@ -6,11 +6,11 @@ function Form ({items,setItems, selectedItem,setSelectedItem, setView, setCurren
     return <div>
     <form>
     <h1 className='title'>Edit Item</h1>
-        <div>
+        {/* <div>
             <label>Input Id:
             <input name='inputId' type='text' placeholder='Enter Id'></input>
             </label>
-        </div>
+        </div> */}
         <div>
             <label>Item name:
             <input name='title' type='text' placeholder="Enter the item's name"></input>

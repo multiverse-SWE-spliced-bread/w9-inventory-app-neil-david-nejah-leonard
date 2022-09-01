@@ -51,7 +51,7 @@ router.put("/:title", async (req,res, next) => {
             title: req.params.title
            }
     });
-        res.json("Item updated!")
+        res.send("Item updated!")
     }catch (error) {
         next(error)
     }
