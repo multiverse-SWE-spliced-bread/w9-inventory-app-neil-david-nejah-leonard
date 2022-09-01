@@ -15,7 +15,15 @@ const handleClick = pageObject =>{
 const handleClickEdit = pageObject =>{  
     setView(2)   
 }
-
+const handleDelete = async()=>{
+    //TODO identify which item is being used when clicking on the main page - does this need a event handler?
+    console.log(selectedItem.title)
+    const response = await fetch(`http://localhost:3000/item/${selectedItem.title}`,
+    {method: 'DELETE'})
+    const itemData = await response.json()
+        setView(0)
+       
+}
 
 
     return <>
@@ -32,7 +40,7 @@ const handleClickEdit = pageObject =>{
               </ul>
               <div>
               <button onClick={handleClickEdit} className="mainPage-btn">Edit</button>
-              <button className="mainPage-btn">Delete</button>
+              <button className="mainPage-btn" onClick={handleDelete}>Delete</button>
               </div>     
 
         </div>
