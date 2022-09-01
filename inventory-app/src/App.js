@@ -18,7 +18,7 @@ function App() {
  <ItemList items={items} selectedItem={selectedItem} setSelectedItem={setSelectedItem} setView={setView} />
 
 	,
-	<SingleItem items={items} selectedItem={selectedItem} setSelectedItem={setSelectedItem} setView={setView}/>
+	<SingleItem items={items} selectedItem={selectedItem} setSelectedItem={setSelectedItem} setView={setView} fetchItems={fetchItems}/>
 	 ,
 	//  Form page
 	  <div><Form /></div> ,

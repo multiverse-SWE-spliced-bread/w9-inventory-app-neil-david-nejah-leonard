@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function SingleItem ({items,setItems, selectedItem,setSelectedItem, setView, setCurrentView}){
+function SingleItem ({items,setItems, selectedItem,setSelectedItem, setView, fetchItems, setCurrentView}){
 
     function updateForm() {
         setView(2)
@@ -14,7 +14,7 @@ function SingleItem ({items,setItems, selectedItem,setSelectedItem, setView, set
         {method: 'DELETE'})
         const itemData = await response.json()
             setView(0)
-           
+           fetchItems()
     }
 
 
