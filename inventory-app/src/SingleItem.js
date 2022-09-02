@@ -29,11 +29,10 @@ function SingleItem ({items,setItems, selectedItem,setSelectedItem, setView, fet
 			<img src={selectedItem.image} alt=''/>
 			<p>{selectedItem.description}</p>
 			<h2 className='title'>£{selectedItem.price}</h2>
-		<button className="singleView-btn" onClick={handleDelete}>Delete Item</button>
+            <div className="singleItemButtonContainer">
+            <button className="singleView-btn" onClick={handleDelete}>Delete Item</button>
 		<button className="singleView-btn"onClick={updateForm}>Update Item</button>
-	
-          
-
+            </div>
          </div>
     )
 }
