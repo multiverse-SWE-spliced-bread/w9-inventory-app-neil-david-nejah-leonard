@@ -59,6 +59,7 @@ router.put("/:title", async (req,res, next) => {
     });
 
     router.delete("/:title", async (req, res, next) => {
+    
         try{
             await Item.destroy({
                 where: {

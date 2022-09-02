@@ -7,6 +7,7 @@ function AddItemForm({
   setSelectedItem,
   setView,
   setCurrentView,
+  fetchItems
 }) {
   const [formInputs, setFormInputs] = useState({});
 
@@ -23,6 +24,7 @@ function AddItemForm({
         method: 'POST',
         mode: "cors", //added to allow to pass login
         body: JSON.stringify(formInputs),
+
       });
 
       const data = await response.json();
@@ -32,6 +34,8 @@ function AddItemForm({
       let newObj = {};
 
       setFormInputs(newObj);
+      setView(0)
+      fetchItems()
       // console.log(formInputs + 'form inputs')
       // console.log('New Item added')
     } catch (err) {

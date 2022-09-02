@@ -18,17 +18,21 @@ function Form ({items,setItems, selectedItem,setSelectedItem, setView, fetchItem
             mode: "cors", //added to allow to pass login
             body: JSON.stringify(formInputs),
           });
-    
+          setView(0)
+          fetchItems()
           const data = await response.json();
-       
           let newObj = {};
     
           setFormInputs(newObj);
-          setView(0)
-          fetchItems()
+          
+       
         } catch (err) {
           
         }
+      }
+      const handleCancel = ()=>{
+          setView(0)
+          fetchItems()
       }
     
       function onChangeHandler(e) {
@@ -109,7 +113,7 @@ function Form ({items,setItems, selectedItem,setSelectedItem, setView, fetchItem
                 ></input>
               </label>
             </div>
-            <button>Cancel</button>
+            <button onClick={handleCancel}>Cancel</button>
             <button form="addItem">Update</button>
           </form>
         </div>

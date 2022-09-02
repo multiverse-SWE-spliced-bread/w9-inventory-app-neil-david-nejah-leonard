@@ -9,7 +9,7 @@ function SingleItem ({items,setItems, selectedItem,setSelectedItem, setView, fet
 
     //sends request to routes to delete item
     const handleDelete = async()=>{
-        console.log(selectedItem.title)
+    
         const response = await fetch(`http://localhost:3000/item/${selectedItem.title}`,
         {method: 'DELETE'})
         const itemData = await response.json()
@@ -28,7 +28,7 @@ function SingleItem ({items,setItems, selectedItem,setSelectedItem, setView, fet
 			<h1 className='title'>{selectedItem.title}</h1>
 			<img src={selectedItem.image} alt=''/>
 			<p>{selectedItem.description}</p>
-			<h2 className='title'>£{selectedItem.price}</h2>
+			<h2 className='title'>£{selectedItem.price.toFixed(2)}</h2>
 		<button className="singleView-btn" onClick={handleDelete}>Delete Item</button>
 		<button className="singleView-btn"onClick={updateForm}>Update Item</button>
 	
