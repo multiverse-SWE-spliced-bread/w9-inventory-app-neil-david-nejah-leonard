@@ -28,9 +28,12 @@ function SingleItem ({items,setItems, selectedItem,setSelectedItem, setView, fet
 			<h1 className='title'>{selectedItem.title}</h1>
 			<img src={selectedItem.image} alt=''/>
 			<p>{selectedItem.description}</p>
-			<h2 className='title'>£{selectedItem.price.toFixed(2)}</h2>
-		<button className="singleView-btn" onClick={handleDelete}>Delete Item</button>
-		<button className="singleView-btn"onClick={updateForm}>Update Item</button>
+			<h2 className='title'>£{selectedItem.price.toFixed(2)}</h2> 
+            <div className='singleItemView-btn'>
+            <button className="singleView-btn" onClick={handleDelete}>Delete Item</button>
+		    <button className="singleView-btn"onClick={updateForm}>Update Item</button>     
+            </div>
+		
 	
           
 

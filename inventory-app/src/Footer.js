@@ -5,7 +5,7 @@ function Footer ({view, setView}) {
 return (
     (view==0 ? 
 <footer>
-<p>Copyright &copy; All Rights Reserved | Terms of Service | Privacy</p>
+<p className = "footerText">Copyright &copy; All Rights Reserved | Terms of Service | Privacy</p>
 </footer> : "" )
 )
 }

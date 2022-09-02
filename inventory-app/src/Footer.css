@@ -4,7 +4,9 @@ footer {
     width: 100vw;
 }
 
-p {
+
+
+.footerText {
     text-align: center;
     font-size: large;
     color: white;

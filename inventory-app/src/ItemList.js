@@ -37,7 +37,12 @@ const handleDelete = async()=>{
                 <img key={index} onClick={()=> handleClick(anObjectMapped)} className='displayImage' src={anObjectMapped.image} alt={anObjectMapped.title} /> </div> 
              <div className = "list" >
              <ul>
-                <li>{(anObjectMapped.title.length > 35 ? anObjectMapped.title.slice(0,35) + "...":anObjectMapped.title.slice(0,35))}</li>
+                {/* <li>{(anObjectMapped.title.length > 35 ? anObjectMapped.title.substring(0,35) :anObjectMapped.title.substring(0,35))}</li> */}
+                <li>
+                    {anObjectMapped.title}
+                </li>
+
+        
                 <li>£{anObjectMapped.price.toFixed(2)}</li>
               </ul>
               </div>     
