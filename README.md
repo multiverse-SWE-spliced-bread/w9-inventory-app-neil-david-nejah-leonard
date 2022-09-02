@@ -10,7 +10,7 @@
 | Tier 4   	| I want to remove an item from the inventory.                                      	|
 | Tier 5   	| CSS or Pick your next feature.                                                    	|
 
-
+Test
 
 ## User Stories
 
@@ -19,13 +19,13 @@
 ### Tier I — MVP Application
 
 * As a User, I want to view all items in inventory
-	* Sequelize Model for Item
-	* Name, Description, Price, Category, Image
-	* Express Route to GET all Items
+	* ~~Sequelize Model for Item   ✅|~~
+	* ~~Name, Description, Price, Category, Image✅~~
+	* ~~Express Route to GET all Items✅~~
 	* Front-end View for all Items
 
 * As a User, I want to view any individual item 
-	* Express Route to GET one Item
+	* ~~Express Route to GET one Item ✅~~
 	* Front-end view for one item (click to see)
 
 

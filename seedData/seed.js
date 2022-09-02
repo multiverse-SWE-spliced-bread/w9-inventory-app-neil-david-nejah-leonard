@@ -1,23 +1,23 @@
-//This is a snippet for populating the database with seed data.
+// This is a snippet for populating the database with seed data.
+const {sauces, items} = require('./seedData.js');
 
-// const {sauces, items} = require('./seedData.js');
+const {database} = require('../server/db');
+const {Item, Sauce} = require('../server/models');
 
-// const {sequelize} = require('./db');
-// const {Item} = require('./models');
 
-// const seed = async () => {
+const seed = async () => {
 
-//     try {
-//         // drop and recreate tables per model definitions
-//         await sequelize.sync({ force: true });
+    try {
+        // drop and recreate tables per model definitions
+        await database.sync({ force: true });
     
-//         // insert data
-//         await Promise.all(items.map(item => Item.create(item)));
+        // insert data
+        await Promise.all(items.map(item => Item.create(item)));
+        await Promise.all(sauces.map(sauce => Sauce.create(sauce)));
+        console.log("db populated!");
+    } catch (error) {
+        console.error(error);
+    }
+}
 
-//         console.log("db populated!");
-//     } catch (error) {
-//         console.error(error);
-//     }
-// }
-
-// seed();
+seed();
