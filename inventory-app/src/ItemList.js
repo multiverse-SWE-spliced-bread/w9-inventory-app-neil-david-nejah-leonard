@@ -33,12 +33,15 @@ const handleDelete = async()=>{
 
     <div>
         <div className="itemCard"> 
-            <img key={index} onClick={()=> handleClick(anObjectMapped)} className='displayImage' src={anObjectMapped.image} alt={anObjectMapped.title} />
-              <ul>
-                <li>{anObjectMapped.title}</li>
+            <div className = "cardImage">
+                <img key={index} onClick={()=> handleClick(anObjectMapped)} className='displayImage' src={anObjectMapped.image} alt={anObjectMapped.title} /> </div> 
+             <div className = "list" >
+             <ul>
+                <li>{(anObjectMapped.title.length > 35 ? anObjectMapped.title.slice(0,35) + "...":anObjectMapped.title.slice(0,35))}</li>
                 <li>£{anObjectMapped.price.toFixed(2)}</li>
               </ul>
-              <div className="buttonsDiv">
+              </div>     
+                <div className="buttonsDiv">
               <button onClick={handleClickEdit} className="mainPage-btn">Edit</button>
               {/* <button className="mainPage-btn" onClick={handleDelete}>Delete</button> */}
               </div>     
