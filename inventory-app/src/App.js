@@ -9,6 +9,7 @@ import AddItemForm from './AddItemForm';
 
 
 import SingleItem from './SingleItem';
+import Footer from './Footer'
 
 
 
@@ -62,11 +63,11 @@ async function fetchItems (){
 		{/* <button onClick={addItemFormBtn}>Add New Item</button> */}
 		<div className='Items'>
 		{views[view]}  
+		<Footer view={view}/>
 		</div>
 
 
-    </div>)
- 
+    </div>) 
 }
 
 
